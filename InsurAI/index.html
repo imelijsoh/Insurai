@@ -334,9 +334,49 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
 });
+
+
+  (function(d,t) {
+(function(d,t) {
+    var BASE_URL="https://n8n-envronment-chatwoot.25h6nh.easypanel.host";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: '52rTPVvzTfEexnGPFQPSZire',
+        baseUrl: BASE_URL,
+        config: {
+          showPopoutButton: false // Oculta el botón original
+        }
+      })
+    }
+  })(document,"script");
+
+  // Función para abrir el chat
+  function abrirChatZybanna(e) {
+    if (e) e.preventDefault();
+    
+    // Verificamos si Chatwoot ya cargó el objeto en la ventana
+    if (window.$chatwoot) {
+      window.$chatwoot.toggle();
+    } else {
+      console.log("El chat aún se está cargando... intenta en un segundo.");
+    }
+  }
+
+  // Vinculamos el clic directamente al cargarse la página
+  document.addEventListener('DOMContentLoaded', function() {
+    var botonIA = document.querySelector('.zybanna-bot-trigger');
+    if (botonIA) {
+      botonIA.onclick = abrirChatZybanna;
+    }
+  });
+
 </script>
-<div class="zybanna-bot-trigger">
-    <img src="Imagenes/IA.PNG"Asistente Zybanna">
+<div class="zybanna-bot-trigger" id="zybanna-chat-btn" style="cursor: pointer;">
+    <img src="Imagenes/IA.PNG" alt="Asistente Zybanna">
 </div>
 
 </body>

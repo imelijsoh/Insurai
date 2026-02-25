@@ -13,12 +13,24 @@
 
 <div class="container-fluid p-0 d-flex">
     <aside class="sidebar">
+
         <div class="logo-section">
-            <img src="Imagenes/Inzur (1).png" alt="Zynapxe" class="logo-img">
+            <img src="Imagenes/Gemini_Generated_Image_ai3ud0ai3ud0ai3u.png" alt="Zynapxe" class="logo-img">
         </div>
         <div class="sidebar-red-line"></div>
         <!-- Accordion menus: Cartera (open) y Soporte y Documentacion -->
         <div class="accordion">
+            <div class="acc-item">
+                <button class="acc-header"> Administración</button>
+                <div class="acc-body">
+                    <ul class="acc-list">
+                        <li><a href="#" class="acc-link">Usuarios</a></li>
+                        <li><a href="#" class="acc-link">Perfiles</a></li>
+                        <li><a href="#" class="acc-link">Accesos</a></li>
+                        <li><a href="#" class="acc-link">Auditoria</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="acc-item open">
                 <div id="marker">
                 </div>
@@ -33,6 +45,43 @@
                     </ul>
                 </div>
             </div>
+            <div class="acc-item">
+                <button class="acc-header"> CRM</button>
+                <div class="acc-body">
+                    <ul class="acc-list">
+                        <li><a href="#" class="acc-link">Calendario</a></li>
+                        <li><a href="#" class="acc-link">Notificaciones</a></li>
+                        <li><a href="#" class="acc-link">Recordatorios</a></li>
+                        <li><a href="#" class="acc-link">Eventos</a></li>
+                        <li><a href="#" class="acc-link">Campañas</a></li>
+                        <li><a href="#" class="acc-link">Plan de impacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-header">Estadisticas</button>
+                <div class="acc-body">
+                    <ul class="acc-list">
+                        <li><a href="#" class="acc-link">Cotizaciones</a></li>
+                        <li><a href="#" class="acc-link">Suscripciones</a></li>
+                        <li><a href="#" class="acc-link">Cobranzas</a></li>
+                        <li><a href="#" class="acc-link">Siniestros</a></li>
+                        <li><a href="#" class="acc-link">Comisiones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-header">Reportes</button>
+                <div class="acc-body">
+                    <ul class="acc-list">
+                        <li><a href="#" class="acc-link">Carteras</a></li>
+                        <li><a href="#" class="acc-link">Siniestros</a></li>
+                        <li><a href="#" class="acc-link">Cobranzas</a></li>
+                    </ul>
+                </div>
+            </div>
+
+         
 
             <div class="acc-item">
                 <button class="acc-header">Soporte y Documentacion</button>
@@ -177,7 +226,7 @@
                 <h4>Consectetur</h4>
                 <p>Donec ornare posuere augue, vel rutrum.</p>
             </div>
-            <div class="update-card">
+            <div class="update-card zybanna-logo-card">
                 <div class="icon-wrap" aria-hidden="true">
                     <img src="Imagenes/IA.PNG" alt="Descripción de la foto" width="50" height="50">
                     <i class="bi bi-person-search" aria-hidden="true"></i>
@@ -212,12 +261,22 @@
 <!-- Agrega aqui el script que te digo -->
 
 <script>
-// Toggle accordion items (ORIGINAL - FUNCIONA)
+// Toggle accordion items: solo un menú abierto a la vez
 document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.acc-header').forEach(function(header){
         header.addEventListener('click', function(){
-            var item = this.parentElement;
-            item.classList.toggle('open');
+            var item = this.parentElement; // .acc-item
+            var isOpen = item.classList.contains('open');
+
+            // Cerrar todos los menús
+            document.querySelectorAll('.acc-item.open').forEach(function(openItem){
+                openItem.classList.remove('open');
+            });
+
+            // Si estaba cerrado, lo abrimos (si estaba abierto, se queda todo cerrado)
+            if (!isOpen) {
+                item.classList.add('open');
+            }
         });
     });
     // Menú Soporte: desplegar a la derecha del sidebar (clic en Soporte)
