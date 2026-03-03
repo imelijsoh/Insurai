@@ -765,17 +765,17 @@ body, html {
 /* Footer */
 
 .footer-updates {
-    display: grid !important;
+    display: grid ;
     grid-template-columns: repeat(5, 1fr) !important;
-    gap: 15px !important;
-    padding: 2px 30px !important; /* El valor que quieras */
+    gap: 10px !important;
+    padding: 2px 20px !important; /* El valor que quieras */
     background: linear-gradient(90deg, #f3d7b0 0%, #d7b89a 40%, #b78f7e 100%) !important;
-    align-items: start !important;
+    align-items: center !important;
 }
 .update-card {
     background: transparent;
     color: #222;
-    padding: 8px 6px;
+    padding: 5px ;
     /* Nuevas propiedades para centrar todo */
     display: flex;
     flex-direction: column; /* Coloca el ícono arriba y el texto abajo */
@@ -783,12 +783,12 @@ body, html {
     text-align: center;     /* Centra el texto del h4 y el párrafo */
 }
 .update-card h4 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin: 0 0 8px 0;
     color: #000000;
 }
 .update-card p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #222;
     opacity: 0.85;
     margin: 0;
@@ -797,12 +797,12 @@ body, html {
 /* Iconos del pie de pagina */
 
 .icon-wrap {
-    width: 90px !important;
-    height: 90px !important;
+    width: 90px ;
+    max-height: 120px ;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Evita que imágenes grandes se salgan del recuadro */
+  /* Evita que imágenes grandes se salgan del recuadro */
 }
 .icon-wrap img {
     width: 100%;
@@ -1187,26 +1187,35 @@ body {
     border-left-color: transparent !important;
     opacity: 0 !important;
 }
-/* Forzar footer pequeño */
+/* Reducir footer verticalmente */
 body .footer-updates {
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+    padding: 5px 20px !important;
+    gap: 5px !important;
     min-height: auto !important;
-    height: auto !important;
 }
 
-/* Asegurar que los iconos mantengan su tamaño */
+/* Iconos más pequeños */
 body .footer-updates .icon-wrap {
-    width: 90px !important;
-    height: 90px !important;
+    width: 50px !important;
+    height: 50px !important;
     margin: 0 !important;
 }
 
+/* Tarjetas más compactas */
 body .footer-updates .update-card {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding: 2px 5px !important;
+}
+
+/* Textos más pequeños y pegados */
+.update-card h4 {
+    font-size: 0.75rem !important;
+    margin: 2px 0 !important;
+}
+
+.update-card p {
+    font-size: 0.65rem !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
 }
 /* FUERZA BRUTA - ELIMINAR TODAS LAS FLECHAS DE LOS SUBMENÚS */
 .soporte-submenu-list li::after,
